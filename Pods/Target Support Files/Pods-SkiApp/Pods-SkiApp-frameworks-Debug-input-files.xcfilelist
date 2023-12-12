@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-SkiApp/Pods-SkiApp-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Movesense/Movesense.framework
+${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework
+${BUILT_PRODUCTS_DIR}/SentryPrivate/SentryPrivate.framework

@@ -1,0 +1,35 @@
+PODS:
+  - Movesense (3.15.0)
+  - Sentry (8.17.0):
+    - Sentry/Core (= 8.17.0)
+    - SentryPrivate (= 8.17.0)
+  - Sentry/Core (8.17.0):
+    - SentryPrivate (= 8.17.0)
+  - SentryPrivate (8.17.0)
+
+DEPENDENCIES:
+  - Movesense (from `https://bitbucket.org/movesense/movesense-mobile-lib.git`)
+  - Sentry
+
+SPEC REPOS:
+  trunk:
+    - Sentry
+    - SentryPrivate
+
+EXTERNAL SOURCES:
+  Movesense:
+    :git: https://bitbucket.org/movesense/movesense-mobile-lib.git
+
+CHECKOUT OPTIONS:
+  Movesense:
+    :commit: c7cc4933823553d2ad3f67db458c507a633ab33d
+    :git: https://bitbucket.org/movesense/movesense-mobile-lib.git
+
+SPEC CHECKSUMS:
+  Movesense: a1068c58b31d8032a13d69d0cb35ba6c444d2aae
+  Sentry: 08c4200e02bd1dc235c57c904b948e65f8f3ceb4
+  SentryPrivate: 1986fdf51e44758f7e191ee8fa8bf072e391d461
+
+PODFILE CHECKSUM: 288050395863e3d474f8394aba511ed55940553c
+
+COCOAPODS: 1.11.3

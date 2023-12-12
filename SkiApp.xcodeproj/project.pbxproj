@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D39108E2B191AD70039A7A1 /* MovesenseTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D39108D2B191AD70039A7A1 /* MovesenseTypes.swift */; };
+		6D46325A2B17841300B5E515 /* SkiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4632592B17841300B5E515 /* SkiApp.swift */; };
+		6D46325C2B17841300B5E515 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D46325B2B17841300B5E515 /* ContentView.swift */; };
+		6D46325E2B17841400B5E515 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D46325D2B17841400B5E515 /* Assets.xcassets */; };
+		6D4632612B17841500B5E515 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D4632602B17841500B5E515 /* Preview Assets.xcassets */; };
+		6D4632692B1788C800B5E515 /* BLEController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4632682B1788C800B5E515 /* BLEController.swift */; };
+		6DF1B00D2B17A58F00C83559 /* libmds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF1B00A2B17A52200C83559 /* libmds.a */; };
+		985C31B5694AFD3BD69D7032 /* Pods_SkiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8634605FA05B0252B8F79212 /* Pods_SkiApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0AF0E247ED7C01EE2E18E5A2 /* Pods-SkiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkiApp.release.xcconfig"; path = "Target Support Files/Pods-SkiApp/Pods-SkiApp.release.xcconfig"; sourceTree = "<group>"; };
+		6D39108D2B191AD70039A7A1 /* MovesenseTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovesenseTypes.swift; sourceTree = "<group>"; };
+		6D4632562B17841300B5E515 /* SkiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D4632592B17841300B5E515 /* SkiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiApp.swift; sourceTree = "<group>"; };
+		6D46325B2B17841300B5E515 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6D46325D2B17841400B5E515 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6D4632602B17841500B5E515 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6D4632672B17886700B5E515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6D4632682B1788C800B5E515 /* BLEController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEController.swift; sourceTree = "<group>"; };
+		6DF1B00A2B17A52200C83559 /* libmds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmds.a; path = "../movesense-mobile-lib/IOS/Movesense/Release-iphoneos/libmds.a"; sourceTree = "<group>"; };
+		6DF1B00B2B17A57F00C83559 /* Release-iphoneos */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Release-iphoneos"; path = "../movesense-mobile-lib/IOS/Movesense/Release-iphoneos"; sourceTree = "<group>"; };
+		8634605FA05B0252B8F79212 /* Pods_SkiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A26D352FE658B95E519DB2AC /* Pods-SkiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkiApp.debug.xcconfig"; path = "Target Support Files/Pods-SkiApp/Pods-SkiApp.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D4632532B17841300B5E515 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DF1B00D2B17A58F00C83559 /* libmds.a in Frameworks */,
+				985C31B5694AFD3BD69D7032 /* Pods_SkiApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47AE69FB63CEAF1C77C03D77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A26D352FE658B95E519DB2AC /* Pods-SkiApp.debug.xcconfig */,
+				0AF0E247ED7C01EE2E18E5A2 /* Pods-SkiApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6D46324D2B17841300B5E515 = {
+			isa = PBXGroup;
+			children = (
+				6D4632582B17841300B5E515 /* SkiApp */,
+				6D4632572B17841300B5E515 /* Products */,
+				47AE69FB63CEAF1C77C03D77 /* Pods */,
+				FE7669476625C5723F5E41BA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6D4632572B17841300B5E515 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D4632562B17841300B5E515 /* SkiApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D4632582B17841300B5E515 /* SkiApp */ = {
+			isa = PBXGroup;
+			children = (
+				6D4632672B17886700B5E515 /* Info.plist */,
+				6D4632592B17841300B5E515 /* SkiApp.swift */,
+				6D46325B2B17841300B5E515 /* ContentView.swift */,
+				6D46325D2B17841400B5E515 /* Assets.xcassets */,
+				6D46325F2B17841500B5E515 /* Preview Content */,
+				6D4632682B1788C800B5E515 /* BLEController.swift */,
+				6D39108D2B191AD70039A7A1 /* MovesenseTypes.swift */,
+			);
+			path = SkiApp;
+			sourceTree = "<group>";
+		};
+		6D46325F2B17841500B5E515 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6D4632602B17841500B5E515 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FE7669476625C5723F5E41BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DF1B00B2B17A57F00C83559 /* Release-iphoneos */,
+				6DF1B00A2B17A52200C83559 /* libmds.a */,
+				8634605FA05B0252B8F79212 /* Pods_SkiApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6D4632552B17841300B5E515 /* SkiApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D4632642B17841500B5E515 /* Build configuration list for PBXNativeTarget "SkiApp" */;
+			buildPhases = (
+				C5644992A8E9DE2B82FB0DFD /* [CP] Check Pods Manifest.lock */,
+				6D4632522B17841300B5E515 /* Sources */,
+				6D4632532B17841300B5E515 /* Frameworks */,
+				6D4632542B17841300B5E515 /* Resources */,
+				7537C32D834C492FB7D41C58 /* Upload Debug Symbols to Sentry */,
+				41B4A63CD00C26F7A22DA966 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkiApp;
+			productName = Skisensor2;
+			productReference = 6D4632562B17841300B5E515 /* SkiApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D46324E2B17841300B5E515 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					6D4632552B17841300B5E515 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 6D4632512B17841300B5E515 /* Build configuration list for PBXProject "SkiApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6D46324D2B17841300B5E515;
+			productRefGroup = 6D4632572B17841300B5E515 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D4632552B17841300B5E515 /* SkiApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6D4632542B17841300B5E515 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D4632612B17841500B5E515 /* Preview Assets.xcassets in Resources */,
+				6D46325E2B17841400B5E515 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41B4A63CD00C26F7A22DA966 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkiApp/Pods-SkiApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkiApp/Pods-SkiApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkiApp/Pods-SkiApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7537C32D834C492FB7D41C58 /* Upload Debug Symbols to Sentry */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+			);
+			name = "Upload Debug Symbols to Sentry";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This script is responsable to upload debug symbols and source context for Sentry.\nif which sentry-cli >/dev/null; then\nexport SENTRY_ORG=codefabrik-gmbh\nexport SENTRY_PROJECT=skisensor2\nERROR=$(sentry-cli debug-files upload --include-sources \"$DWARF_DSYM_FOLDER_PATH\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
+		};
+		C5644992A8E9DE2B82FB0DFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkiApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D4632522B17841300B5E515 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D46325C2B17841300B5E515 /* ContentView.swift in Sources */,
+				6D39108E2B191AD70039A7A1 /* MovesenseTypes.swift in Sources */,
+				6D4632692B1788C800B5E515 /* BLEController.swift in Sources */,
+				6D46325A2B17841300B5E515 /* SkiApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6D4632622B17841500B5E515 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6D4632632B17841500B5E515 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6D4632652B17841500B5E515 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A26D352FE658B95E519DB2AC /* Pods-SkiApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_ASSET_PATHS = "\"SkiApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 3F966NFD22;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkiApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SkiApp;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "The SkiApp app needs to transfer data from the sensor to the mobile phone";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "The SkiApp app needs to connect to the Movesense sensor";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Movesense\"",
+					"-ld_classic",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.ios.prifina.skiapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6D4632662B17841500B5E515 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AF0E247ED7C01EE2E18E5A2 /* Pods-SkiApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_ASSET_PATHS = "\"SkiApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 3F966NFD22;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkiApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SkiApp;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "The SkiApp app needs to transfer data from the sensor to the mobile phone";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "The SkiApp app needs to connect to the Movesense sensor";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Movesense\"",
+					"-ld_classic",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.ios.prifina.skiapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D4632512B17841300B5E515 /* Build configuration list for PBXProject "SkiApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D4632622B17841500B5E515 /* Debug */,
+				6D4632632B17841500B5E515 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D4632642B17841500B5E515 /* Build configuration list for PBXNativeTarget "SkiApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D4632652B17841500B5E515 /* Debug */,
+				6D4632662B17841500B5E515 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6D46324E2B17841300B5E515 /* Project object */;
+}
