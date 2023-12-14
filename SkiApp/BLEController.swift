@@ -1,12 +1,13 @@
 //
 //  BLEManager.swift
-//  SkiApp
+//  Skisensor2
 
 
 import Foundation
 import CoreBluetooth
 import Movesense
 import Sentry
+import CoreData
 
 struct MovesenseSensor: Hashable {
     let peripheral: CBPeripheral
@@ -21,9 +22,7 @@ struct MovesenseConnection: Hashable {
     var firmwareVersion: String
     var firmwareName: String
     var firmwareManufacturer: String
-    var accData: [MovesenseDatapoint] = []
-    var gyroData: [MovesenseDatapoint] = []
-    var magnData: [MovesenseDatapoint] = []
+    var lastMeasurement: Date?
 }
 
 struct MovesenseDatapoint: Hashable, Identifiable {
@@ -68,7 +67,15 @@ enum SkisensorError: Error {
     case SensorNotFound
 }
 
+extension Date {
+    static func - (lhs: Date, rhs: Date) -> TimeInterval {
+        return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
+    }
+}
+
 final class BLEController: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate {
+    var moc: NSManagedObjectContext?
+    
     @Published var isSwitchedOn = false
     
     @Published var scanState = ScanState.Off
@@ -82,6 +89,8 @@ final class BLEController: NSObject, ObservableObject, CBCentralManagerDelegate,
     var bleCentral: CBCentralManager!
     var mds : MDSWrapper!
     var decoder = JSONDecoder()
+    
+    var sessionEntity: SessionEntity?
     
     var scanTimer: Timer?
     
@@ -183,6 +192,7 @@ final class BLEController: NSObject, ObservableObject, CBCentralManagerDelegate,
     
     func stopRecording(serial: String) {
         mds.doUnsubscribe("\(serial)/Sample/IntAcc/13")
+        self.connections[serial]?.lastMeasurement = Date.distantPast
         //Task { try await updateRecordingStatus(serial: serial) }
     }
     
@@ -207,41 +217,61 @@ final class BLEController: NSObject, ObservableObject, CBCentralManagerDelegate,
             },
             onEvent: { (event) in
                 do {
+                    if self.sessionEntity == nil {
+                        // this is the first connection, start a session
+                        let session = SessionEntity(context: self.moc!)
+                        session.date = Date()
+                        self.sessionEntity = session
+                    }
+                    
+                    let sensors = self.sessionEntity?.sensors?.allObjects as? [SensorEntity]
+                    var sensor = sensors!.first(where: { $0.serial == serial })
+                    
+                    if sensor == nil {
+                        sensor = SensorEntity(context: self.moc!)
+                        sensor!.session = self.sessionEntity
+                        sensor!.serial = serial
+                    }
+                    
                     let decodedEvent = try self.decoder.decode(MovesenseEventContainer<SkisensorMeasurement>.self, from: event.bodyData)
                     let ts = Double(decodedEvent.body.Timestamp) / 1000.0
-                    let acc = decodedEvent.body.Acc
                     
-                    let INT16_MAX: Double = 32767
-                    let g = (9.832 + 9.780) * 0.5
-                    let accScale = INT16_MAX / (g * 8)
-                    self.connections[serial]!.accData.append(MovesenseDatapoint(id: ts, axis: "ax", value: Double(acc.x) / accScale))
-                    self.connections[serial]!.accData.append(MovesenseDatapoint(id: ts, axis: "ay", value: Double(acc.y) / accScale))
-                    self.connections[serial]!.accData.append(MovesenseDatapoint(id: ts, axis: "az", value: Double(acc.z) / accScale))
+                    self.connections[serial]?.lastMeasurement = Date()
 
+                    let acc = decodedEvent.body.Acc
+                    let INT16_MAX: Double = 32767
+                    let ONE_G = (9.832 + 9.780) * 0.5
+                    let accScale = INT16_MAX / (ONE_G * 8)
+                    
                     let gyro = decodedEvent.body.Gyro
                     let gyroScale = INT16_MAX / 500
-                    self.connections[serial]!.gyroData.append(MovesenseDatapoint(id: ts, axis: "gx", value: Double(gyro.x) / gyroScale))
-                    self.connections[serial]!.gyroData.append(MovesenseDatapoint(id: ts, axis: "gy", value: Double(gyro.y) / gyroScale))
-                    self.connections[serial]!.gyroData.append(MovesenseDatapoint(id: ts, axis: "gz", value: Double(gyro.z) / gyroScale))
-
+                    
                     let magn = decodedEvent.body.Magn
                     let magnScale = INT16_MAX / 5000
-                    self.connections[serial]!.magnData.append(MovesenseDatapoint(id: ts, axis: "mx", value: Double(magn.x) / magnScale))
-                    self.connections[serial]!.magnData.append(MovesenseDatapoint(id: ts, axis: "my", value: Double(magn.y) / magnScale))
-                    self.connections[serial]!.magnData.append(MovesenseDatapoint(id: ts, axis: "mz", value: Double(magn.z) / magnScale))
                     
-                    if self.connections[serial]?.accData.count ?? 0 > 150 {
-                        self.connections[serial]?.accData.removeFirst(3)
-                    }
+                    let measurement = MeasurementEntity(context: self.moc!)
+                    let a = Value3dEntity(context: self.moc!)
+                    a.x = Double(acc.x) / accScale
+                    a.y = Double(acc.y) / accScale
+                    a.z = Double(acc.z) / accScale
+                    measurement.acc = a
                     
-                    if self.connections[serial]?.gyroData.count ?? 0 > 150 {
-                        self.connections[serial]?.gyroData.removeFirst(3)
-                    }
+                    let g = Value3dEntity(context: self.moc!)
+                    g.x = Double(gyro.x) / gyroScale
+                    g.y = Double(gyro.y) / gyroScale
+                    g.z = Double(gyro.z) / gyroScale
+                    measurement.gyro = g
                     
-                    if self.connections[serial]?.magnData.count ?? 0 > 150 {
-                        self.connections[serial]?.magnData.removeFirst(3)
-                    }
+                    let m = Value3dEntity(context: self.moc!)
+                    m.x = Double(magn.x) / magnScale
+                    m.y = Double(magn.y) / magnScale
+                    m.z = Double(magn.z) / magnScale
+                    measurement.magn = m
                     
+                    measurement.timestamp = Date()
+                    measurement.sensor = sensor
+                    
+                    try? self.moc!.save()
                 } catch {
                     print(error)
                     SentrySDK.capture(error: error)

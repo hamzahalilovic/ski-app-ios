@@ -1,6 +1,4 @@
-//
-//  Skisensor2App.swift
-//  SkiApp
+
 
 import SwiftUI
 import Sentry
@@ -8,10 +6,12 @@ import Sentry
 
 @main
 struct SkiApp: App {
+    @StateObject private var storageController = StorageController()
+
     init() {
         SentrySDK.start { options in
             options.dsn = "https://def07200321ba7480a50f1cf68ddf02d@o524370.ingest.sentry.io/4506316297076736"
-            options.debug = true // Enabled debug when first installing is always helpful
+            options.debug = false // Enabled debug when first installing is always helpful
             options.tracesSampleRate = 0.05
 
             // Uncomment the following lines to add more data to your events
@@ -22,6 +22,7 @@ struct SkiApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, storageController.container.viewContext)
         }
     }
 }
